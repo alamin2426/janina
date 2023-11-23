@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+
+    <section id="section-container">
+        <h2>Event Buble Reasy</h2>
+        <ul id="ul-container">
+            <h3>item parant</h3>
+            <li>item-1</li>
+            <li id="second-item">item-1</li>
+            <li>item-1</li>
+            <li>item-1</li>
+            <li>item-1</li>
+        </ul>
+    </section>
+    <script>
+        document.getElementById('second-item').addEventListener('click', function(event){
+            // event.stopPropagation();
+            event.stopImmediatePropagation();
+            
+            console.log('click second item');
+        })
+        document.getElementById('second-item').addEventListener('click', function(){
+            
+            
+            console.log('click second item');
+        })
+        document.getElementById('second-item').addEventListener('click', function(){
+            console.log('click second item');
+        })
+        document.getElementById('second-item').addEventListener('click', function(){
+            console.log('click second item');
+        })
+        document.getElementById('ul-container').addEventListener('click', function(){
+            console.log('click ul-container');
+        })
+        document.getElementById('section-container').addEventListener('click', function(){
+            console.log('click section-container');
+        })
+    </script>
+    
+</body>
+</html>
